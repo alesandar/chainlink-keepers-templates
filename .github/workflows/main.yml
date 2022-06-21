@@ -24,3 +24,15 @@ jobs:
       - name: Test Vault Harvester contracts
         working-directory: ./vault-harvester
         run: yarn test
+
+      - name: Install Batch NFT Reveal dependencies
+        working-directory: ./batch-nft-reveal
+        run: yarn install --frozen-lockfile
+
+      - name: Compile Batch NFT Reveal contracts
+        working-directory: ./batch-nft-reveal
+        run: yarn compile
+
+      - name: Test Batch NFT Reveal contracts
+        working-directory: ./batch-nft-reveal
+        run: yarn test
