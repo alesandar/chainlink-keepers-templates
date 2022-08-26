@@ -1,5 +1,4 @@
 import { Heading, Text } from '@chakra-ui/react'
-import { Layout } from '../components/layout'
 
 function HomeIndex(): JSX.Element {
   return (
