@@ -172,7 +172,8 @@ describe("NFTCollection", async function () {
         "./test/data/unrevealed_metadata.txt",
         "utf8"
       );
-      const uri = await nftCollection.tokenURI(0);
+      await mint(nftCollection, NFT_REVEAL_BATCH_SIZE);
+      const uri = await nftCollection.tokenURI(1);
       expect(uri).to.equal(expectedUri);
     });
 
@@ -185,7 +186,7 @@ describe("NFTCollection", async function () {
         "./test/data/revealed_metadata.txt",
         "utf8"
       );
-      const uri = await nftCollection.tokenURI(0);
+      const uri = await nftCollection.tokenURI(1);
       expect(uri).to.equal(expectedUri);
     });
   });
