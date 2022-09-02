@@ -82,6 +82,10 @@ To have a fully working solution, both [Chainlink VRF](https://docs.chain.link/d
 
 To automate the metadata reveal with Chainlink’s network of keepers, you need to [register new Upkeeep](https://keepers.chain.link/new) by following this [step-by-step guide](https://docs.chain.link/docs/chainlink-keepers/register-upkeep/).
 
+## User Interface
+
+There's an [app](/app) included in this repo which helps you configure and deploy collections from the browser using Metamask or WalletConnect. It then generates a shareable collection page to mint, monitor when is the next reveal, and browse through the collection NFTs.
+
 ## Misc
 
 To flatten the contract which is used to open and deploy via Remix IDE:
