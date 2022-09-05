@@ -18,6 +18,7 @@ git config user.email "${GITHUB_ACTOR}@bots.github.com"
 git fetch
 git checkout "$source_branch"
 
+ls -al
 cd batch-nft-reveal/app/
 
 yarn install
