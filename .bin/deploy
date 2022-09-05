@@ -19,7 +19,11 @@ git fetch
 git checkout "$source_branch"
 
 ls -al
-cd batch-nft-reveal/app/
+echo
+ls -al ./batch-nft-reveal
+echo
+cd ./batch-nft-reveal/app
+echo
 
 yarn install
 yarn build
