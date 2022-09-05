@@ -41,4 +41,4 @@ if [ $? -ne 0 ]; then
 fi
 
 git remote set-url origin "$repo_uri"
-git push --force-with-lease origin "$target_branch"
+git push -f origin "$target_branch"
