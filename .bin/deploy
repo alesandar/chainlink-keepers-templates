@@ -26,7 +26,7 @@ yarn export -o "$build_dir"
 
 git checkout -fB "$target_branch"
 
-mv .git "$build_dir"
+mv ../../.git "$build_dir"
 cd "$build_dir"
 touch .nojekyll
 # echo -n "chainlink-demo.app" > CNAME
