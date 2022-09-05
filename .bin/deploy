@@ -10,29 +10,27 @@ short_subject="$(git log -1 --pretty=format:'%s')"
 current_action_url="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
 br="
 "
+yarn_project="$GITHUB_WORKSPACE/batch-nft-reveal/app"
+
 
 cd "$GITHUB_WORKSPACE"
-
 git config user.name "$GITHUB_ACTOR"
 git config user.email "${GITHUB_ACTOR}@bots.github.com"
 git fetch
 git checkout "$source_branch"
 
-cd ./batch-nft-reveal/app
-
+cd $yarn_project
 yarn install
 yarn build
 yarn export -o "$build_dir"
 
-echo $GITHUB_ACTION_REPOSITORY
-exit 1
 git checkout -fB "$target_branch"
 
 mv ../../.git "$build_dir"
 cd "$build_dir"
 touch .nojekyll
 # echo -n "chainlink-demo.app" > CNAME
-echo "[![Deploy to GitHub Pages](https://github.com/hackbg/chainlink-keepers-templates/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/hackbg/chainlink-keepers-templates/actions/workflows/gh-pages.yml)" > README.md
+echo "[![Deploy to GitHub Pages](https://github.com/${GITHUB_REPOSITORY}/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/${GITHUB_REPOSITORY}/actions/workflows/gh-pages.yml)" > README.md
 
 git add .
 git commit -m "⚙️ rebuild ${short_hash} [${short_subject}]${br}${br}${current_action_url}"
