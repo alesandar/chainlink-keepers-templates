@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eu
 
+domain=chainlink-demo.app
+yarn_project="$GITHUB_WORKSPACE/batch-nft-reveal/app"
 repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 source_branch="feature/batch-nft-app"
 target_branch="gh-pages"
@@ -10,8 +12,6 @@ short_subject="$(git log -1 --pretty=format:'%s')"
 current_action_url="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
 br="
 "
-yarn_project="$GITHUB_WORKSPACE/batch-nft-reveal/app"
-
 
 cd "$GITHUB_WORKSPACE"
 git config user.name "$GITHUB_ACTOR"
@@ -29,7 +29,7 @@ git checkout -fB "$target_branch"
 mv ../../.git "$build_dir"
 cd "$build_dir"
 touch .nojekyll
-# echo -n "chainlink-demo.app" > CNAME
+echo -n "$domain" > CNAME
 echo "[![Deploy to GitHub Pages](https://github.com/${GITHUB_REPOSITORY}/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/${GITHUB_REPOSITORY}/actions/workflows/gh-pages.yml)" > README.md
 
 git add .
