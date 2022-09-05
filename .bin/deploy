@@ -24,6 +24,8 @@ yarn install
 yarn build
 yarn export -o "$build_dir"
 
+echo GITHUB_ACTION_REPOSITORY
+exit
 git checkout -fB "$target_branch"
 
 mv ../../.git "$build_dir"
