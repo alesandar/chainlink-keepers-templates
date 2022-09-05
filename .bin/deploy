@@ -22,7 +22,7 @@ ls -al
 echo
 ls -al ./batch-nft-reveal
 echo
-cd ./batch-nft-reveal/app
+cd "$GITHUB_WORKSPACE/batch-nft-reveal/app"
 echo
 
 yarn install
