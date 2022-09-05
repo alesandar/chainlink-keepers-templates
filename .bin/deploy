@@ -19,7 +19,8 @@ git fetch
 git checkout "$source_branch"
 
 ls -al
-cd "$GITHUB_WORKSPACE/batch-nft-reveal/app"
+cd ./batch-nft-reveal
+
 echo
 exit
 
