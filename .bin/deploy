@@ -2,7 +2,7 @@
 set -eu
 
 repo_uri="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-source_branch="main"
+source_branch="feature/batch-nft-app"
 target_branch="gh-pages"
 build_dir="/tmp/dist"
 short_hash="$(git rev-parse --short=8 HEAD)"
@@ -18,11 +18,7 @@ git config user.email "${GITHUB_ACTOR}@bots.github.com"
 git fetch
 git checkout "$source_branch"
 
-ls -al
-cd ./batch-nft-reveal
-
-echo
-exit
+cd ./batch-nft-reveal/app
 
 yarn install
 yarn build
